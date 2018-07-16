@@ -12,13 +12,15 @@ namespace task1;
 class Point
 {
   public $x, $y;
+
   function __construct($x, $y)
   {
     $this->x = $x;
     $this->y = $y;
   }
-  function getInfo()
+
+  function __toString()
   {
-    echo "x: $this->x ; y: $this->y <br>";
+    return "x: $this->x ; y: $this->y <br>";
   }
 }

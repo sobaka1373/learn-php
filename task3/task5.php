@@ -1,6 +1,9 @@
 <?php
+
 namespace task5;
-include "Persons.php";
+
+include "Person.php";
+
 function findMinAge($items)
 {
   $min=$items[0];
@@ -11,8 +14,9 @@ function findMinAge($items)
   }
   return $min;
 }
-$items=array(new Persons("Bay", "Ivan", "81"),
-  new Persons ("Gosho", "Petrov", "32"),
-  new Persons("Lena", "Polka", "55"));
+
+$items=array(new Person("Bay", "Ivan", "81"),
+  new Person ("Gosho", "Petrov", "32"),
+  new Person("Lena", "Polka", "55"));
 $min=findMinAge($items);
-$min->getInfo();
+echo $min->__toString();

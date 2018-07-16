@@ -1,4 +1,7 @@
 <?php
+
 namespace task4;
-include "TestClass.php";
-var_dump(property_exists(new TestClass(), 'test_prop'));
+
+include "TestProperty.php";
+
+var_dump(property_exists(new TestProperty(), 'test_prop'));

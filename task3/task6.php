@@ -1,11 +1,15 @@
 <?php
+
 namespace task5;
-include "Persons.php";
+include "Person.php";
+
+
 function swap(&$x,&$y) {
   $tmp=$x;
   $x=$y;
   $y=$tmp;
 }
+
 function group($persons, $type)
 {
   if($type=="firstname"){
@@ -17,8 +21,7 @@ function group($persons, $type)
       }
     }
     return $persons;
-  }
-  else if ($type=="lastname"){
+  } else if ($type=="lastname"){
     for($i=0, $len = count($persons); $i<$len; $i++){
       for($j=0; $j<$len; $j++) {
         if($persons[$i]->lastName > $persons[$j]->lastName){
@@ -27,8 +30,7 @@ function group($persons, $type)
       }
     }
     return $persons;
-  }
-  else if($type=="age"){
+  } else if($type=="age"){
     for($i=0, $len = count($persons); $i<$len; $i++){
       for($j=0; $j<$len; $j++) {
         if($persons[$i]->age > $persons[$j]->age){
@@ -40,12 +42,14 @@ function group($persons, $type)
   }
 }
 
-$items=array(new Persons("Bay", "Ivan", "81"),
-  new Persons("Lena", "Polka", "55"),
-  new Persons ("Gosho", "Petrov", "32"));
+
+
+$items=array(new Person('Bay', 'Ivan', '81'),
+  new Person ('Lena', 'Polka', '55'),
+  new Person ('Gosho', 'Petrov', '32'));
 
 $items = group($items, "firstname");
 
 for($i=0, $len = count($items); $i<$len; $i++){
-  $items[$i]->getInfo();
+  echo $items[$i]->__toString();
 }
