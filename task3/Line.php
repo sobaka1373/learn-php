@@ -11,18 +11,14 @@ namespace task1;
 
 class Line
 {
-  public $x1, $y1, $x2, $y2;
-
   function __construct(Point $p1, Point $p2)
   {
-    $this->x1=$p1->x;
-    $this->y1=$p1->y;
-    $this->x2=$p2->x;
-    $this->y2=$p2->y;
+    $this->p1 = $p1;
+    $this->p2 = $p2;
   }
 
   function __toString()
   {
-    return "x1: $this->x1 ; y1: $this->y1 ; $this->x2 ; y2: $this->y2 <br>";
+    return "p1: $this->p1 p2: $this->p2 <br>";
   }
 }

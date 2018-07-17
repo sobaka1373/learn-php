@@ -13,9 +13,6 @@ class TestProperty
 {
   public $test_prop;
 
-  /**
-   * @return mixed
-   */
   public function getTestProp()
   {
     return $this->test_prop;
