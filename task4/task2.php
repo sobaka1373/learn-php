@@ -6,7 +6,7 @@ function checkBrackets($str)
   for ($i = 0, $len = strlen($str); $i < $len; $i++) {
     if ($str[$i] == '(') {
       $left++;
-    } elseif ($str[$i] == ')') {
+    } elseif ($str[$i] == ')' && $left > $right) {
       $right++;
     }
   }
@@ -16,7 +16,7 @@ function checkBrackets($str)
     return false;
   }
 }
-$test = "((a+b))/5-d)";
+$test = "))a+b((/5-d";
 $tmp = checkBrackets($test);
 if ($tmp) {
   echo "correct";

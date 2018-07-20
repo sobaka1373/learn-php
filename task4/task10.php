@@ -39,7 +39,6 @@ function generateList($arr, $html, $div)
   $html = str_replace($new, $new1, $html);
   return $html;
 }
-
 $people = [new Person("Peter", "15"),
   new Person("Adam", "20"),
   new Person("Polina", "25")];
@@ -54,8 +53,10 @@ $html = "<div data-type='template' id='list-item'>
 <div data-type='template' id='list'>
 <strong>-{name}-</strong> <span>-{age}-</span>
 </div>
-<div data-type='template' id='list-ite'>
+<div data-type='template' id='list-item'>
+<strong>-{age}-</strong> <span>-{name}-</span>
 <strong>-{}-</strong> <span>-{}-</span>
 </div>";
+
 $html = generateList($people, $html, $tmp);
 var_dump($html);
